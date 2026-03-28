@@ -1,0 +1,14 @@
+// ============================================================
+// Main stylesheet — Espejo Studios
+// Import order matters: variables → bootstrap → custom
+// ============================================================
+
+// 1. Custom variable overrides
+@import 'variables';
+
+// 2. Bootstrap (from node_modules)
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+// 3. Site-specific styles
+@import 'layout';
+@import 'components';
