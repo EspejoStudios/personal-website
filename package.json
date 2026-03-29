@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Espejo Studios personal website",
   "scripts": {
-    "sass:watch": "sass assets/scss/main.scss assets/css/main.css --watch --source-map",
-    "sass:build": "sass assets/scss/main.scss assets/css/main.css --style=compressed --no-source-map",
+    "sass:watch": "sass assets/scss/main.scss:assets/css/main.css assets/scss/ivyan.scss:assets/css/ivyan.css --watch --source-map",
+    "sass:build": "sass assets/scss/main.scss:assets/css/main.css assets/scss/ivyan.scss:assets/css/ivyan.css --style=compressed --no-source-map",
     "dev": "npm-run-all --parallel sass:watch serve",
     "serve": "live-server --port=3000 --open=index.html"
   },

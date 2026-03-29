@@ -1,5 +1,7 @@
 node_modules/
 assets/css/main.css
 assets/css/main.css.map
+assets/css/ivyan.css
+assets/css/ivyan.css.map
 .DS_Store
 .env
