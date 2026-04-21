@@ -1,14 +1,32 @@
 // ============================================================
-// Main stylesheet — Espejo Studios
-// Import order matters: variables → bootstrap → custom
+// Main stylesheet — Espejo Studios · Kanso x Cyberpunk
+// Import order: tokens → variables → bootstrap → custom
 // ============================================================
 
-// 1. Custom variable overrides
+// 1. Design system tokens (CSS custom properties)
+@import 'tokens';
+
+// 2. Bootstrap variable overrides (SCSS $variables)
 @import 'variables';
 
-// 2. Bootstrap (from node_modules)
+// 3. Bootstrap (grid, utilities, reboot)
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
-// 3. Site-specific styles
-@import 'layout';
-@import 'components';
+// 4. Mixins
+@import 'mixins';
+
+// 5. Base styles
+@import 'base';
+
+// 6. Components
+@import 'nav';
+@import 'hero';
+@import 'disciplines';
+@import 'about';
+@import 'work';
+@import 'journal';
+@import 'connect';
+@import 'footer';
+
+// 7. Animation system
+@import 'animations';

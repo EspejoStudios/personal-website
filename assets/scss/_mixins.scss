@@ -1,0 +1,52 @@
+// ============================================================
+// Mixins — Kanso x Cyberpunk effects
+// ============================================================
+
+@mixin gradient-text {
+  background: var(--gradient-hero);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin scan-lines {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-scanline);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+@mixin label {
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-lh);
+  letter-spacing: var(--text-label-track);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@mixin section-padding {
+  padding: var(--space-24) 0;
+
+  @media (min-width: 992px) {
+    padding: var(--space-32) 0;
+  }
+}
+
+@mixin gradient-divider {
+  height: 1px;
+  background: var(--gradient-divider);
+  border: 0;
+}
+
+@mixin glow($color-rgb, $intensity: 0.3) {
+  box-shadow:
+    0 0 12px rgba($color-rgb, $intensity),
+    0 0 40px rgba($color-rgb, $intensity * 0.4);
+}

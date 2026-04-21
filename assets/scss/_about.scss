@@ -1,0 +1,42 @@
+// ============================================================
+// About — Asymmetric two-column layout
+// ============================================================
+
+.ks-about {
+  @include section-padding;
+
+  &__label {
+    @include label;
+    color: var(--sora);
+    margin-bottom: var(--space-6);
+  }
+
+  &__heading {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--color-text-primary);
+  }
+
+  &__body {
+    p {
+      font-family: var(--font-body);
+      font-size: var(--text-body-lg-size);
+      line-height: var(--text-body-lg-lh);
+      color: var(--steel-200);
+      font-weight: 300;
+
+      & + p {
+        margin-top: var(--space-6);
+      }
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .ks-about__heading {
+    margin-bottom: var(--space-10);
+  }
+}

@@ -1,0 +1,40 @@
+// ============================================================
+// Animations — Staggered reveal system
+// ============================================================
+
+// Children start hidden, translate up
+[data-animate="child"] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--duration-deliberate) var(--ease-out-expo),
+    transform var(--duration-deliberate) var(--ease-out-expo);
+  transition-delay: calc(var(--reveal-delay, 0) * 100ms);
+}
+
+// Once parent is revealed, children animate in
+.is-revealed [data-animate="child"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// Respect motion preferences
+@media (prefers-reduced-motion: reduce) {
+  [data-animate="child"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+// Scroll cue pulse
+@keyframes scroll-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(8px);
+  }
+}

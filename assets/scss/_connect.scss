@@ -1,0 +1,229 @@
+// ============================================================
+// Connect — Full-width CTA band with mystery + glow
+// ============================================================
+
+.ks-connect {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-32) 0;
+  background: var(--void-950);
+
+  // Animated background glow
+  &__glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        ellipse 80% 60% at 30% 50%,
+        rgba(0, 212, 255, 0.06) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 60% 80% at 70% 60%,
+        rgba(255, 45, 120, 0.04) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 50% 50% at 50% 40%,
+        rgba(123, 47, 255, 0.05) 0%,
+        transparent 60%
+      );
+    animation: connect-breathe 8s ease-in-out infinite alternate;
+  }
+
+  // Scan lines overlay
+  &__scan-lines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: var(--gradient-scanline);
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__content {
+    margin-bottom: var(--space-12);
+  }
+
+  &__crest {
+    width: 56px;
+    height: 56px;
+    margin-bottom: var(--space-8);
+    opacity: 0.6;
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+    animation: crest-pulse 4s ease-in-out infinite;
+  }
+
+  &__label {
+    @include label;
+    color: var(--sora);
+    margin-bottom: var(--space-4);
+    letter-spacing: 0.14em;
+  }
+
+  &__heading {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--steel-50);
+    margin-bottom: var(--space-6);
+  }
+
+  &__subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-body-lg-size);
+    line-height: 1.7;
+    color: var(--steel-300);
+    font-weight: 300;
+  }
+
+  // ─── Form ─────────────────────────────────────────────────
+  &__form {
+    text-align: left;
+  }
+
+  &__form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  &__field {
+    margin-bottom: var(--space-4);
+  }
+
+  &__field-label {
+    @include label;
+    color: var(--steel-300);
+    display: block;
+    margin-bottom: var(--space-2);
+    font-size: 11px;
+  }
+
+  &__input {
+    width: 100%;
+    background: var(--void-900);
+    border: 1px solid rgba(58, 74, 107, 0.4);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    color: var(--steel-50);
+    font-family: var(--font-body);
+    font-size: var(--text-body-sm-size);
+    transition:
+      border-color var(--duration-normal) var(--ease-out-expo),
+      box-shadow var(--duration-normal) var(--ease-out-expo);
+
+    &::placeholder {
+      color: var(--steel-400);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--sora);
+      box-shadow:
+        0 0 0 2px var(--void-950),
+        0 0 0 4px rgba(0, 212, 255, 0.3),
+        0 0 24px rgba(0, 212, 255, 0.1);
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  &__submit {
+    width: 100%;
+    padding: var(--space-4) var(--space-6);
+    font-size: var(--text-body-size);
+    font-weight: 600;
+    justify-content: center;
+    margin-top: var(--space-2);
+    position: relative;
+    overflow: hidden;
+
+    // Animated shimmer on hover
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.15),
+        transparent
+      );
+      transition: left var(--duration-slow) var(--ease-out-expo);
+    }
+
+    &:hover::before {
+      left: 100%;
+    }
+  }
+
+  &__submit-arrow {
+    transition: transform var(--duration-normal) var(--ease-out-expo);
+  }
+
+  &__submit:hover &__submit-arrow {
+    transform: translateX(4px);
+  }
+}
+
+// ─── Animations ───────────────────────────────────────────────
+@keyframes connect-breathe {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes crest-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 16px rgba(0, 212, 255, 0.3));
+  }
+  50% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 28px rgba(0, 212, 255, 0.5))
+            drop-shadow(0 0 48px rgba(123, 47, 255, 0.2));
+  }
+}
+
+// ─── Responsive ───────────────────────────────────────────────
+@media (max-width: 767.98px) {
+  .ks-connect {
+    padding: var(--space-24) 0;
+
+    &__form-row {
+      grid-template-columns: 1fr;
+    }
+
+    &__crest {
+      width: 44px;
+      height: 44px;
+    }
+  }
+}

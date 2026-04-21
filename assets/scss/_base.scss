@@ -1,0 +1,90 @@
+// ============================================================
+// Base — Global resets, typography, selection
+// ============================================================
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text-body);
+  font-family: var(--font-body);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-lh);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(0, 212, 255, 0.25);
+  color: var(--steel-50);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-text-primary);
+  font-weight: 700;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-lh);
+  letter-spacing: var(--text-h1-track);
+}
+
+h2 {
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-lh);
+  letter-spacing: var(--text-h2-track);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-lh);
+  letter-spacing: var(--text-h3-track);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-lh);
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+  color: var(--color-text-body);
+}
+
+a {
+  color: var(--sora);
+  text-decoration: none;
+  transition: color var(--duration-instant) var(--ease-out-expo);
+
+  &:hover {
+    color: var(--steel-50);
+  }
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-code-size);
+  line-height: var(--text-code-lh);
+}
+
+code {
+  color: var(--sora);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--color-border-subtle);
+  margin: var(--space-6) 0;
+}

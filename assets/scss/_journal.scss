@@ -1,0 +1,102 @@
+// ============================================================
+// Journal — Editorial list with hover animations
+// ============================================================
+
+.ks-journal {
+  @include section-padding;
+  position: relative;
+
+  &__gradient-divider {
+    @include gradient-divider;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__label {
+    @include label;
+    color: var(--sora);
+    margin-bottom: var(--space-3);
+  }
+
+  &__heading {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+  }
+
+  &__list {
+    border-top: 1px solid rgba(58, 74, 107, 0.2);
+  }
+
+  &__entry {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    padding: var(--space-6) var(--space-2);
+    border-bottom: 1px solid rgba(58, 74, 107, 0.15);
+    text-decoration: none;
+    transition:
+      padding-left var(--duration-normal) var(--ease-out-expo),
+      background var(--duration-normal) var(--ease-out-expo);
+
+    &:hover {
+      padding-left: var(--space-4);
+      background: rgba(0, 212, 255, 0.02);
+
+      .ks-journal__entry-title {
+        color: var(--steel-50);
+      }
+
+      .ks-journal__arrow {
+        color: var(--sora);
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  &__date {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-size);
+    color: var(--steel-400);
+    white-space: nowrap;
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+
+  &__entry-title {
+    font-family: var(--font-display);
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-weight: 500;
+    color: var(--steel-100);
+    flex: 1;
+    transition: color var(--duration-fast) var(--ease-out-expo);
+  }
+
+  &__arrow {
+    font-size: 18px;
+    color: var(--steel-400);
+    flex-shrink: 0;
+    transition:
+      color var(--duration-fast) var(--ease-out-expo),
+      transform var(--duration-normal) var(--ease-out-expo);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ks-journal__entry {
+    flex-wrap: wrap;
+    gap: var(--space-1);
+
+    .ks-journal__date {
+      width: 100%;
+    }
+  }
+
+  .ks-journal__arrow {
+    display: none;
+  }
+}

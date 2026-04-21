@@ -1,0 +1,79 @@
+// ============================================================
+// Footer — Minimal with gradient divider
+// ============================================================
+
+.ks-footer {
+  padding: var(--space-24) 0 var(--space-12);
+  position: relative;
+
+  &__gradient-divider {
+    @include gradient-divider;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__logo {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--steel-50);
+    margin-bottom: var(--space-2);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  &__crest {
+    width: 28px;
+    height: 28px;
+    opacity: 0.6;
+  }
+
+  &__tagline {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-size);
+    color: var(--steel-400);
+    letter-spacing: 0.04em;
+  }
+
+  &__links {
+    display: flex;
+    gap: var(--space-6);
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    a {
+      font-family: var(--font-body);
+      font-size: var(--text-body-sm-size);
+      color: var(--steel-300);
+      text-decoration: none;
+      transition: color var(--duration-fast) var(--ease-out-expo);
+
+      &:hover {
+        color: var(--sora);
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: var(--space-16);
+    padding-top: var(--space-6);
+    border-top: 1px solid rgba(58, 74, 107, 0.15);
+
+    p {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--steel-400);
+      letter-spacing: 0.02em;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ks-footer__links {
+    justify-content: flex-start;
+    margin-top: var(--space-6);
+  }
+}

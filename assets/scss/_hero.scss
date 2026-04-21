@@ -1,0 +1,202 @@
+// ============================================================
+// Hero — Full viewport, gradient text, scan lines, crest
+// ============================================================
+
+.ks-hero {
+  @include scan-lines;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-32) 0 var(--space-24);
+
+  // Background image layer
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('../img/hero-bg.png');
+    background-size: cover;
+    background-position: center 40%;
+    background-repeat: no-repeat;
+
+    // Color treatment — cool desaturate + void tint
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(11, 17, 33, 0.35) 0%,
+          rgba(11, 17, 33, 0.5) 50%,
+          rgba(11, 17, 33, 0.92) 85%,
+          var(--void-900) 100%
+        ),
+        linear-gradient(
+          135deg,
+          rgba(0, 212, 255, 0.12) 0%,
+          rgba(123, 47, 255, 0.08) 50%,
+          rgba(255, 45, 120, 0.06) 100%
+        );
+      mix-blend-mode: normal;
+    }
+  }
+
+  // Atmospheric radial glows
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 80%;
+    background: radial-gradient(
+      ellipse at 50% 30%,
+      rgba(0, 212, 255, 0.1) 0%,
+      rgba(123, 47, 255, 0.05) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 3;
+  }
+
+  &__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    margin-bottom: var(--space-10);
+  }
+
+  &__crest {
+    width: 44px;
+    height: auto;
+    opacity: 0.75;
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.25));
+  }
+
+  &__eyebrow-text {
+    @include label;
+    color: var(--steel-50);
+    text-shadow: 0 1px 8px rgba(5, 8, 16, 0.8), 0 0 24px rgba(5, 8, 16, 0.5);
+    letter-spacing: 0.14em;
+  }
+
+  // ─── Title ────────────────────────────────────────────────
+  &__title {
+    font-family: var(--font-display);
+    font-size: var(--text-display-size);
+    font-weight: 800;
+    line-height: var(--text-display-lh);
+    letter-spacing: var(--text-display-track);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-8);
+    max-width: 900px;
+    text-shadow: 0 2px 16px rgba(5, 8, 16, 0.6);
+  }
+
+  &__gradient {
+    @include gradient-text;
+    // gradient-text uses background-clip, so text-shadow won't work
+    // the gradient itself provides enough contrast
+    filter: drop-shadow(0 2px 12px rgba(0, 212, 255, 0.3));
+  }
+
+  &__subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-body-lg-size);
+    line-height: var(--text-body-lg-lh);
+    color: var(--steel-100);
+    max-width: 560px;
+    margin-bottom: var(--space-12);
+    font-weight: 300;
+    text-shadow: 0 1px 12px rgba(5, 8, 16, 0.7);
+  }
+
+  &__cta {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  &__scroll-cue {
+    position: absolute;
+    bottom: var(--space-10);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+
+    span {
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--sora), transparent);
+      animation: scroll-pulse 2.5s ease-in-out infinite;
+    }
+  }
+}
+
+// ─── Buttons ──────────────────────────────────────────────────
+.ks-btn {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm-size);
+  font-weight: 500;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition:
+    background var(--duration-fast) var(--ease-out-expo),
+    color var(--duration-fast) var(--ease-out-expo),
+    border-color var(--duration-fast) var(--ease-out-expo),
+    box-shadow var(--duration-fast) var(--ease-out-expo);
+
+  &--primary {
+    background: var(--sora);
+    color: var(--void-950);
+    border: 1px solid var(--sora);
+
+    &:hover {
+      color: var(--void-950);
+      box-shadow: var(--shadow-glow-sora);
+    }
+  }
+
+  &--ghost {
+    background: rgba(11, 17, 33, 0.4);
+    color: var(--steel-50);
+    border: 1px solid rgba(200, 208, 224, 0.25);
+    backdrop-filter: blur(4px);
+
+    &:hover {
+      color: var(--steel-50);
+      border-color: var(--sora);
+      box-shadow: 0 0 16px rgba(0, 212, 255, 0.15);
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ks-hero {
+    padding: var(--space-24) 0 var(--space-16);
+    min-height: 90vh;
+
+    &__crest {
+      width: 36px;
+      height: 36px;
+    }
+
+    &__brand {
+      margin-bottom: var(--space-8);
+    }
+  }
+}

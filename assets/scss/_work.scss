@@ -1,0 +1,89 @@
+// ============================================================
+// Selected Work — Cards with tech stack footer
+// ============================================================
+
+.ks-work {
+  @include section-padding;
+
+  &__label {
+    @include label;
+    color: var(--sora);
+    margin-bottom: var(--space-3);
+  }
+
+  &__heading {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+  }
+}
+
+.ks-card {
+  background: var(--color-surface);
+  border: 1px solid rgba(58, 74, 107, 0.3);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition:
+    border-color var(--duration-normal) var(--ease-out-expo),
+    background var(--duration-normal) var(--ease-out-expo),
+    box-shadow var(--duration-normal) var(--ease-out-expo);
+
+  &:hover {
+    border-color: rgba(0, 212, 255, 0.3);
+    background: var(--color-surface-raised);
+    box-shadow: 0 0 24px rgba(0, 212, 255, 0.08);
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+  }
+
+  &__tag {
+    @include label;
+    font-size: 11px;
+    color: var(--sora);
+    background: rgba(0, 212, 255, 0.08);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: var(--text-h4-size);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-3);
+  }
+
+  &__desc {
+    font-family: var(--font-body);
+    font-size: var(--text-body-sm-size);
+    line-height: 1.6;
+    color: var(--steel-200);
+    flex: 1;
+  }
+
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+    padding-top: var(--space-4);
+    border-top: 1px solid rgba(58, 74, 107, 0.2);
+  }
+
+  &__tech {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--steel-300);
+    letter-spacing: 0.02em;
+  }
+}

@@ -1,0 +1,82 @@
+// ============================================================
+// Disciplines Strip — 5-column grid with numbered items
+// ============================================================
+
+.ks-disciplines {
+  @include section-padding;
+  position: relative;
+
+  &__gradient-divider {
+    @include gradient-divider;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+  }
+
+  &__item {
+    padding: var(--space-8) var(--space-6);
+    border-left: 1px solid rgba(58, 74, 107, 0.25);
+    transition: border-color var(--duration-normal) var(--ease-out-expo);
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:hover {
+      border-left-color: rgba(0, 212, 255, 0.4);
+    }
+  }
+
+  &__number {
+    @include label;
+    color: var(--sora);
+    display: block;
+    margin-bottom: var(--space-4);
+  }
+
+  &__name {
+    font-family: var(--font-display);
+    font-size: var(--text-h4-size);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  &__desc {
+    font-family: var(--font-body);
+    font-size: var(--text-body-sm-size);
+    color: var(--steel-300);
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .ks-disciplines__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ks-disciplines__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ks-disciplines__item {
+    padding: var(--space-6) var(--space-4);
+
+    &:nth-child(odd) {
+      border-left: none;
+    }
+  }
+
+  .ks-disciplines__name {
+    font-size: 18px;
+  }
+}

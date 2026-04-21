@@ -1,0 +1,131 @@
+// ============================================================
+// Design Tokens — Kanso x Cyberpunk
+// Kyoto 2038 · Ghost in the Shell · Ma · Wabi-Sabi
+// ============================================================
+
+:root {
+  // ───── Void — 60% base layer ──────────────────────────────
+  --void-950: #050810;
+  --void-900: #0B1121;
+  --void-800: #111827;
+  --void-700: #1C2840;
+  --void-600: #253350;
+
+  // ───── Steel — 30% neutral layer ─────────────────────────
+  --steel-500: #3A4A6B;
+  --steel-400: #4A5A7B;
+  --steel-300: #6B7A9B;
+  --steel-200: #9BA5BF;
+  --steel-100: #C8D0E0;
+  --steel-50:  #F0F3F5;
+
+  // ───── Neon — 10% accent tracks ──────────────────────────
+  --sora:    #00D4FF;
+  --yoru:    #7B2FFF;
+  --neon:    #FF2D78;
+  --akane:   #FF1A3C;
+  --inazuma: #FFD600;
+  --success: #00E5A0;
+
+  // ───── Semantic mapping ──────────────────────────────────
+  --color-bg:             var(--void-900);
+  --color-bg-deep:        var(--void-950);
+  --color-surface:        var(--void-800);
+  --color-surface-raised: var(--void-700);
+  --color-surface-hover:  var(--void-600);
+  --color-border:         var(--steel-500);
+  --color-border-subtle:  rgba(58, 74, 107, 0.4);
+
+  --color-text-primary:   var(--steel-50);
+  --color-text-body:      var(--steel-100);
+  --color-text-muted:     var(--steel-300);
+  --color-text-subtle:    var(--steel-400);
+
+  --color-interactive:    var(--sora);
+
+  // ───── Gradients ─────────────────────────────────────────
+  --gradient-hero:    linear-gradient(135deg, #00D4FF 0%, #FF2D78 100%);
+  --gradient-divider: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.4), transparent);
+  --gradient-scanline: repeating-linear-gradient(
+    0deg,
+    rgba(200, 208, 224, 0.03) 0 1px,
+    transparent 1px 3px
+  );
+
+  // ───── Typography ────────────────────────────────────────
+  --font-display: 'Manrope', system-ui, sans-serif;
+  --font-body:    'Outfit', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  --text-display-size:  clamp(56px, 8vw, 96px);
+  --text-display-lh:    0.95;
+  --text-display-track: -0.04em;
+
+  --text-h1-size:  48px;
+  --text-h1-lh:    1.05;
+  --text-h1-track: -0.03em;
+
+  --text-h2-size:  36px;
+  --text-h2-lh:    1.15;
+  --text-h2-track: -0.02em;
+
+  --text-h3-size:  28px;
+  --text-h3-lh:    1.2;
+  --text-h3-track: -0.01em;
+
+  --text-h4-size: 22px;
+  --text-h4-lh:   1.3;
+
+  --text-body-lg-size: 18px;
+  --text-body-lg-lh:   1.7;
+
+  --text-body-size: 16px;
+  --text-body-lh:   1.6;
+
+  --text-body-sm-size: 14px;
+  --text-body-sm-lh:   1.5;
+
+  --text-label-size:  12px;
+  --text-label-lh:    1.4;
+  --text-label-track: 0.08em;
+
+  --text-code-size: 14px;
+  --text-code-lh:   1.55;
+
+  // ───── Spacing (4px base, Ma principle) ──────────────────
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  // ───── Radius (lean sharp) ──────────────────────────────
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-xl:   12px;
+  --radius-full: 9999px;
+
+  // ───── Motion ────────────────────────────────────────────
+  --ease-out-expo:       cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-instant:    80ms;
+  --duration-fast:       150ms;
+  --duration-normal:     250ms;
+  --duration-slow:       400ms;
+  --duration-deliberate: 600ms;
+
+  // ───── Shadows (void-tinted) ─────────────────────────────
+  --shadow-sm:        0 1px 3px rgba(5, 8, 16, 0.6);
+  --shadow-md:        0 4px 16px rgba(5, 8, 16, 0.7);
+  --shadow-lg:        0 8px 32px rgba(5, 8, 16, 0.8);
+  --shadow-glow-sora: 0 0 12px rgba(0, 212, 255, 0.4), 0 0 40px rgba(0, 212, 255, 0.15);
+  --shadow-glow-neon: 0 0 12px rgba(255, 45, 120, 0.4), 0 0 40px rgba(255, 45, 120, 0.15);
+  --shadow-focus:     0 0 0 2px var(--void-900), 0 0 0 4px var(--sora);
+}

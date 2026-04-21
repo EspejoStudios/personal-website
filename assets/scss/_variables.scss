@@ -1,22 +1,32 @@
 // ============================================================
-// Custom Bootstrap variable overrides
+// Bootstrap variable overrides — mapped to Kanso tokens
 // Must come BEFORE Bootstrap import
 // ============================================================
 
-// Brand colors — update these to match your personal brand
-$primary:   #0057FF;
-$secondary: #6C757D;
-$dark:      #0D0D0D;
-$light:     #F8F9FA;
+$primary:   #00D4FF;
+$secondary: #7B2FFF;
+$dark:      #0B1121;
+$light:     #F0F3F5;
+$danger:    #FF1A3C;
+$warning:   #FFD600;
+$success:   #00E5A0;
 
-// Typography
-$font-family-sans-serif: 'Inter', system-ui, -apple-system, sans-serif;
+$body-bg:    #0B1121;
+$body-color: #C8D0E0;
+
+$font-family-sans-serif: 'Outfit', system-ui, -apple-system, sans-serif;
 $font-size-base:         1rem;
 $line-height-base:       1.6;
 
-// Spacing
 $spacer: 1rem;
 
-// Border radius
-$border-radius:    0.5rem;
-$border-radius-lg: 0.75rem;
+$border-radius:    0.25rem;
+$border-radius-sm: 0.125rem;
+$border-radius-lg: 0.5rem;
+
+$link-color: #00D4FF;
+$link-hover-color: #F0F3F5;
+$link-decoration: none;
+
+$card-bg: transparent;
+$card-border-color: transparent;
