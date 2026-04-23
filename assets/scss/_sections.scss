@@ -1,0 +1,401 @@
+// ============================================================
+// Sections — Experiments · Clients · Services · Collab
+//            Curations · The Rabbit Hole
+// ============================================================
+
+// ─── Shared section shell ────────────────────────────────
+.ks-section {
+  padding: var(--space-24) 0;
+
+  &--alt {
+    background: var(--color-bg-deep);
+  }
+}
+
+.ks-section-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  color: var(--steel-500);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+
+.ks-section-heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2-size);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: var(--text-h2-track);
+  line-height: var(--text-h2-lh);
+  max-width: 640px;
+  margin-bottom: var(--space-3);
+}
+
+.ks-section-sub {
+  font-size: var(--text-body-size);
+  color: var(--color-text-muted);
+  max-width: 520px;
+  margin-bottom: var(--space-12);
+  line-height: var(--text-body-lh);
+}
+
+.ks-section-header {
+  margin-bottom: var(--space-12);
+}
+
+// ─── Experiments ─────────────────────────────────────────
+.ks-experiments {
+  padding: var(--space-24) 0;
+  background: var(--color-bg-deep);
+}
+
+.ks-experiment-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  height: 100%;
+  transition:
+    border-color var(--duration-fast) var(--ease-out-expo),
+    background var(--duration-fast) var(--ease-out-expo);
+
+  &:hover {
+    border-color: rgba(0, 212, 255, 0.2);
+    background: var(--color-surface-raised);
+  }
+
+  &__status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+
+    &::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    &--active  { color: var(--success); }
+    &--shipped { color: var(--sora); }
+    &--wip     { color: var(--inazuma); }
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: var(--text-h4-size);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-3);
+  }
+
+  &__desc {
+    font-size: var(--text-body-sm-size);
+    color: var(--color-text-muted);
+    line-height: var(--text-body-lh);
+    margin-bottom: var(--space-6);
+  }
+
+  &__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+
+    span {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--steel-400);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 2px 8px;
+      letter-spacing: 0.06em;
+    }
+  }
+}
+
+// ─── Clients ─────────────────────────────────────────────
+.ks-clients {
+  padding: var(--space-24) 0;
+}
+
+.ks-clients__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--color-border-subtle);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+
+  @media (min-width: 576px) { grid-template-columns: repeat(3, 1fr); }
+  @media (min-width: 992px) { grid-template-columns: repeat(4, 1fr); }
+}
+
+.ks-clients__cell {
+  background: var(--color-surface);
+  padding: var(--space-8) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: background var(--duration-fast) var(--ease-out-expo);
+
+  &:hover { background: var(--color-surface-raised); }
+
+  &-name {
+    font-family: var(--font-display);
+    font-size: var(--text-body-size);
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  &-sector {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--steel-500);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+// ─── Services ────────────────────────────────────────────
+.ks-services {
+  padding: var(--space-24) 0;
+  background: var(--color-bg-deep);
+}
+
+.ks-service-item {
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  transition: border-color var(--duration-fast) ease;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 2fr 3fr 1fr;
+    align-items: center;
+  }
+
+  &:first-child { border-top: 1px solid var(--color-border-subtle); }
+
+  &:hover { border-color: rgba(0, 212, 255, 0.18); }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: var(--text-body-lg-size);
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  &__desc {
+    font-size: var(--text-body-sm-size);
+    color: var(--color-text-muted);
+    line-height: var(--text-body-lh);
+  }
+
+  &__tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--sora);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) { text-align: right; }
+  }
+}
+
+// ─── Collab ──────────────────────────────────────────────
+.ks-collab {
+  padding: var(--space-24) 0;
+  position: relative;
+  overflow: hidden;
+
+  &__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(123, 47, 255, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: var(--space-6);
+  }
+
+  &__sub {
+    font-size: var(--text-body-lg-size);
+    color: var(--color-text-muted);
+    line-height: var(--text-body-lg-lh);
+    margin-bottom: var(--space-10);
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// ─── Curations ───────────────────────────────────────────
+.ks-curations {
+  padding: var(--space-24) 0;
+  background: var(--color-bg-deep);
+}
+
+.ks-curation-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  text-decoration: none;
+  transition: border-color var(--duration-fast) ease;
+
+  @media (min-width: 768px) {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-8);
+  }
+
+  &:hover { border-color: rgba(0, 212, 255, 0.2); }
+  &:first-child { border-top: 1px solid var(--color-border-subtle); }
+
+  &__cat {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--steel-500);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    min-width: 80px;
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: var(--text-body-size);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    transition: color 180ms ease;
+
+    .ks-curation-item:hover & { color: var(--sora); }
+  }
+
+  &__arrow {
+    color: var(--steel-500);
+    font-size: var(--text-body-sm-size);
+    transition: color 180ms ease, transform 180ms ease;
+
+    .ks-curation-item:hover & {
+      color: var(--sora);
+      transform: translateX(4px);
+    }
+  }
+}
+
+// ─── The Rabbit Hole ─────────────────────────────────────
+.ks-rabbit {
+  padding: var(--space-24) 0;
+  position: relative;
+  overflow: hidden;
+
+  &__bg-noise {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(200, 208, 224, 0.015) 0 1px,
+      transparent 1px 4px
+    );
+    pointer-events: none;
+  }
+
+  &__warning {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--neon);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+    opacity: 0.7;
+  }
+
+  &__heading {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 60px);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: var(--space-6);
+  }
+
+  &__sub {
+    font-size: var(--text-body-size);
+    color: var(--color-text-muted);
+    max-width: 480px;
+    line-height: var(--text-body-lh);
+    margin-bottom: var(--space-12);
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--color-border-subtle);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    max-width: 640px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-5) var(--space-6);
+    background: var(--color-surface);
+    text-decoration: none;
+    transition: background var(--duration-fast) ease;
+    gap: var(--space-4);
+
+    &:hover { background: var(--color-surface-raised); }
+
+    &-label {
+      font-family: var(--font-body);
+      font-size: var(--text-body-sm-size);
+      color: var(--color-text-muted);
+      transition: color 180ms ease;
+
+      .ks-rabbit__link:hover & { color: var(--steel-50); }
+    }
+
+    &-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--sora);
+      letter-spacing: 0.08em;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+  }
+}

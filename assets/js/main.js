@@ -54,6 +54,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ─── Burger / overlay ────────────────────────────────────
+  const burger  = document.getElementById('ksBurger');
+  const overlay = document.getElementById('ksOverlay');
+
+  function openMenu() {
+    burger.classList.add('is-open');
+    overlay.classList.add('is-open');
+    burger.setAttribute('aria-expanded', 'true');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    burger.classList.remove('is-open');
+    overlay.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (burger && overlay) {
+    burger.addEventListener('click', () => {
+      burger.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeMenu();
+    });
+
+    overlay.querySelectorAll('.ks-overlay__link').forEach(link => {
+      link.addEventListener('click', () => closeMenu());
+    });
+  }
+
   // ─── Smooth scroll for anchor links ──────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
