@@ -7,44 +7,62 @@
   <meta name="theme-color" content="#0B1121" />
   <title>Espejo Studios</title>
 
-  <!-- Fonts: Manrope (display), Outfit (body), JetBrains Mono (code) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Compiled styles -->
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       Navigation
-       ═══════════════════════════════════════════════════════════ -->
+  <!-- Navigation (logo only) -->
   <header class="ks-nav" data-scrolled="false">
     <div class="container">
-      <div class="d-flex justify-content-between align-items-center">
-        <a href="/" class="ks-nav__logo">Espejo Studios</a>
-        <nav class="ks-nav__links">
-          <a href="#disciplines">Disciplines</a>
-          <a href="#work">Work</a>
-          <a href="#journal">Journal</a>
-          <a href="#about">About</a>
-          <a href="#connect" class="ks-nav__links-cta">Connect</a>
-        </nav>
-      </div>
+      <a href="/" class="ks-nav__logo">Espejo Studios</a>
     </div>
   </header>
 
+  <!-- Burger -->
+  <button class="ks-burger" id="ksBurger" aria-label="Open navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Full-screen overlay nav -->
+  <div class="ks-overlay" id="ksOverlay" aria-hidden="true">
+    <ol class="ks-overlay__list">
+      <li class="ks-overlay__item"><a href="#vision"      class="ks-overlay__link"><span class="ks-overlay__num">01</span>Vision</a></li>
+      <li class="ks-overlay__item"><a href="#projects"    class="ks-overlay__link"><span class="ks-overlay__num">02</span>Projects</a></li>
+      <li class="ks-overlay__item"><a href="#experiments" class="ks-overlay__link"><span class="ks-overlay__num">03</span>Experiments</a></li>
+      <li class="ks-overlay__item"><a href="#clients"     class="ks-overlay__link"><span class="ks-overlay__num">04</span>Clients</a></li>
+      <li class="ks-overlay__item"><a href="#services"    class="ks-overlay__link"><span class="ks-overlay__num">05</span>Services</a></li>
+      <li class="ks-overlay__item"><a href="#collab"      class="ks-overlay__link"><span class="ks-overlay__num">06</span>Collab</a></li>
+      <li class="ks-overlay__item"><a href="#about"       class="ks-overlay__link"><span class="ks-overlay__num">07</span>About</a></li>
+      <li class="ks-overlay__item"><a href="#writings"    class="ks-overlay__link"><span class="ks-overlay__num">08</span>Writings &amp; Thoughts</a></li>
+      <li class="ks-overlay__item"><a href="#curations"   class="ks-overlay__link"><span class="ks-overlay__num">09</span>Curations</a></li>
+      <li class="ks-overlay__item"><a href="#connect"     class="ks-overlay__link"><span class="ks-overlay__num">10</span>Connect</a></li>
+      <li class="ks-overlay__item"><a href="#rabbit-hole" class="ks-overlay__link ks-overlay__link--special"><span class="ks-overlay__num">11</span>The Rabbit Hole</a></li>
+    </ol>
+    <div class="ks-overlay__panel">
+      <p class="ks-overlay__panel-label">Find me</p>
+      <div class="ks-overlay__social">
+        <a href="https://linkedin.com/in/ivyanespejo" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/EspejoStudios" target="_blank" rel="noopener">GitHub</a>
+        <a href="/ivyan">CV</a>
+      </div>
+      <p class="ks-overlay__tagline">Kyoto 2038.</p>
+    </div>
+  </div>
+
   <main>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         Hero
-         ═══════════════════════════════════════════════════════════ -->
-    <section class="ks-hero" data-animate="reveal">
+    <!-- 01 · Vision -->
+    <section id="vision" class="ks-hero" data-animate="reveal">
       <div class="ks-hero__bg" aria-hidden="true"></div>
       <div class="container">
         <div class="ks-hero__eyebrow" data-animate="child" data-delay="0">
-          <img src="assets/img/crest.svg" alt="Espejo crest — four mirrors" class="ks-hero__crest" />
+          <img src="assets/img/crest.svg" alt="Espejo crest" class="ks-hero__crest" />
           <span class="ks-hero__eyebrow-text">Espejo Studios</span>
         </div>
         <h1 class="ks-hero__title" data-animate="child" data-delay="1">
@@ -55,7 +73,7 @@
           of human intuition and machine intelligence.
         </p>
         <div class="ks-hero__cta" data-animate="child" data-delay="3">
-          <a href="#work" class="ks-btn ks-btn--primary">View Work</a>
+          <a href="#projects" class="ks-btn ks-btn--primary">View Work</a>
           <a href="#connect" class="ks-btn ks-btn--ghost">Get In Touch</a>
         </div>
       </div>
@@ -64,49 +82,11 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         Disciplines
-         ═══════════════════════════════════════════════════════════ -->
-    <section id="disciplines" class="ks-disciplines" data-animate="reveal">
-      <div class="ks-disciplines__gradient-divider" aria-hidden="true"></div>
-      <div class="container">
-        <div class="ks-disciplines__grid">
-          <div class="ks-disciplines__item" data-animate="child" data-delay="0">
-            <span class="ks-disciplines__number">01</span>
-            <h3 class="ks-disciplines__name">Design</h3>
-            <p class="ks-disciplines__desc">Systems, interfaces, experiences.</p>
-          </div>
-          <div class="ks-disciplines__item" data-animate="child" data-delay="1">
-            <span class="ks-disciplines__number">02</span>
-            <h3 class="ks-disciplines__name">Engineering</h3>
-            <p class="ks-disciplines__desc">Front-end to infrastructure.</p>
-          </div>
-          <div class="ks-disciplines__item" data-animate="child" data-delay="2">
-            <span class="ks-disciplines__number">03</span>
-            <h3 class="ks-disciplines__name">AI</h3>
-            <p class="ks-disciplines__desc">Applied intelligence, not hype.</p>
-          </div>
-          <div class="ks-disciplines__item" data-animate="child" data-delay="3">
-            <span class="ks-disciplines__number">04</span>
-            <h3 class="ks-disciplines__name">Music</h3>
-            <p class="ks-disciplines__desc">Sound as another design medium.</p>
-          </div>
-          <div class="ks-disciplines__item" data-animate="child" data-delay="4">
-            <span class="ks-disciplines__number">05</span>
-            <h3 class="ks-disciplines__name">Philosophy</h3>
-            <p class="ks-disciplines__desc">Why before how. Always.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         Selected Work
-         ═══════════════════════════════════════════════════════════ -->
-    <section id="work" class="ks-work" data-animate="reveal">
+    <!-- 02 · Projects -->
+    <section id="projects" class="ks-work" data-animate="reveal">
       <div class="container">
         <div class="mb-5">
-          <p class="ks-work__label" data-animate="child" data-delay="0">Selected Work</p>
+          <p class="ks-work__label" data-animate="child" data-delay="0">Projects</p>
           <h2 class="ks-work__heading" data-animate="child" data-delay="1">Things we've built.</h2>
         </div>
         <div class="row g-4">
@@ -132,7 +112,7 @@
                 <span class="ks-card__tag">Enterprise</span>
               </div>
               <h3 class="ks-card__title">BCBS Global Solutions</h3>
-              <p class="ks-card__desc">Brand migration, AI document extraction wizard, WCAG 2.1 AA compliance across the product suite.</p>
+              <p class="ks-card__desc">Brand migration, AI document extraction wizard, WCAG 2.1 AA compliance across the full product suite.</p>
               <div class="ks-card__footer">
                 <span class="ks-card__tech">Blazor</span>
                 <span class="ks-card__tech">Design System</span>
@@ -143,15 +123,14 @@
           <div class="col-lg-4" data-animate="child" data-delay="4">
             <article class="ks-card">
               <div class="ks-card__meta">
-                <span class="ks-card__tag">IoT</span>
-                <span class="ks-card__tag">AI</span>
+                <span class="ks-card__tag">Enterprise</span>
+                <span class="ks-card__tag">UX</span>
               </div>
-              <h3 class="ks-card__title">Local AI Home Security</h3>
-              <p class="ks-card__desc">Frigate NVR + Raspberry Pi 5 + Hailo-8L. VLAN-isolated, Tailscale remote access. Privacy-first.</p>
+              <h3 class="ks-card__title">BofA Credit Product Search</h3>
+              <p class="ks-card__desc">SharePoint enterprise portal via Google Search Appliance. Increased qualified applicants by 3×.</p>
               <div class="ks-card__footer">
-                <span class="ks-card__tech">Frigate</span>
-                <span class="ks-card__tech">RPi 5</span>
-                <span class="ks-card__tech">Hailo-8L</span>
+                <span class="ks-card__tech">SharePoint</span>
+                <span class="ks-card__tech">UX Strategy</span>
               </div>
             </article>
           </div>
@@ -159,14 +138,180 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         Journal
-         ═══════════════════════════════════════════════════════════ -->
-    <section id="journal" class="ks-journal" data-animate="reveal">
+    <!-- 03 · Experiments -->
+    <section id="experiments" class="ks-experiments" data-animate="reveal">
+      <div class="container">
+        <div class="ks-section-header">
+          <p class="ks-section-label" data-animate="child" data-delay="0">Lab</p>
+          <h2 class="ks-section-heading" data-animate="child" data-delay="1">Things built in the dark.</h2>
+          <p class="ks-section-sub" data-animate="child" data-delay="2">Side projects, prototypes, and obsessions that may or may not ship.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" data-animate="child" data-delay="3">
+            <div class="ks-experiment-card">
+              <div class="ks-experiment-card__status ks-experiment-card__status--shipped">Shipped</div>
+              <h3 class="ks-experiment-card__title">Local AI Home Security</h3>
+              <p class="ks-experiment-card__desc">Frigate NVR + Raspberry Pi 5 + Hailo-8L NPU. VLAN-isolated, Tailscale remote access. Full on-prem inference, zero cloud.</p>
+              <div class="ks-experiment-card__stack">
+                <span>Frigate NVR</span><span>RPi 5</span><span>Hailo-8L</span><span>Tailscale</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-animate="child" data-delay="4">
+            <div class="ks-experiment-card">
+              <div class="ks-experiment-card__status ks-experiment-card__status--active">Active</div>
+              <h3 class="ks-experiment-card__title">AI Document Extraction</h3>
+              <p class="ks-experiment-card__desc">Wizard-driven extraction pipeline that replaced hours of manual processing. Designed and built end-to-end.</p>
+              <div class="ks-experiment-card__stack">
+                <span>.NET Blazor</span><span>AI/ML</span><span>UX Design</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-animate="child" data-delay="5">
+            <div class="ks-experiment-card">
+              <div class="ks-experiment-card__status ks-experiment-card__status--wip">In Progress</div>
+              <h3 class="ks-experiment-card__title">Generative Music System</h3>
+              <p class="ks-experiment-card__desc">Exploring AI-assisted composition at the boundary of structure and chaos. Music as another design medium.</p>
+              <div class="ks-experiment-card__stack">
+                <span>Python</span><span>MIDI</span><span>ML</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · Clients -->
+    <section id="clients" class="ks-clients" data-animate="reveal">
+      <div class="container">
+        <div class="ks-section-header">
+          <p class="ks-section-label" data-animate="child" data-delay="0">Track record</p>
+          <h2 class="ks-section-heading" data-animate="child" data-delay="1">Trusted by companies who ship real things.</h2>
+        </div>
+        <div class="ks-clients__grid" data-animate="child" data-delay="2">
+          <div class="ks-clients__cell">
+            <span class="ks-clients__cell-name">BCBS Global Solutions</span>
+            <span class="ks-clients__cell-sector">Healthcare</span>
+          </div>
+          <div class="ks-clients__cell">
+            <span class="ks-clients__cell-name">Bank of America</span>
+            <span class="ks-clients__cell-sector">Financial</span>
+          </div>
+          <div class="ks-clients__cell">
+            <span class="ks-clients__cell-name">Morgan Stanley</span>
+            <span class="ks-clients__cell-sector">Financial</span>
+          </div>
+          <div class="ks-clients__cell">
+            <span class="ks-clients__cell-name">KORG USA</span>
+            <span class="ks-clients__cell-sector">Music / Consumer</span>
+          </div>
+          <div class="ks-clients__cell">
+            <span class="ks-clients__cell-name">AT&amp;T</span>
+            <span class="ks-clients__cell-sector">Telecom</span>
+          </div>
+          <div class="ks-clients__cell">
+            <span class="ks-clients__cell-name">Mandarin Oriental</span>
+            <span class="ks-clients__cell-sector">Hospitality</span>
+          </div>
+          <div class="ks-clients__cell">
+            <span class="ks-clients__cell-name">White Castle</span>
+            <span class="ks-clients__cell-sector">Retail / QSR</span>
+          </div>
+          <div class="ks-clients__cell">
+            <span class="ks-clients__cell-name">Espejo Studios</span>
+            <span class="ks-clients__cell-sector">Independent</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · Services -->
+    <section id="services" class="ks-services" data-animate="reveal">
+      <div class="container">
+        <div class="ks-section-header">
+          <p class="ks-section-label" data-animate="child" data-delay="0">What we do</p>
+          <h2 class="ks-section-heading" data-animate="child" data-delay="1">From vision to working product.</h2>
+        </div>
+        <div data-animate="child" data-delay="2">
+          <div class="ks-service-item">
+            <span class="ks-service-item__title">UX / UI Design</span>
+            <span class="ks-service-item__desc">Systems thinking applied to interfaces. Research, flows, prototyping, and pixel-perfect delivery.</span>
+            <span class="ks-service-item__tag">Design</span>
+          </div>
+          <div class="ks-service-item">
+            <span class="ks-service-item__title">Front-End Engineering</span>
+            <span class="ks-service-item__desc">HTML, CSS, JavaScript, .NET Blazor. Built to last, accessible by default.</span>
+            <span class="ks-service-item__tag">Engineering</span>
+          </div>
+          <div class="ks-service-item">
+            <span class="ks-service-item__title">Design Systems</span>
+            <span class="ks-service-item__desc">Component libraries, tokens, documentation. The infrastructure design teams actually use.</span>
+            <span class="ks-service-item__tag">Systems</span>
+          </div>
+          <div class="ks-service-item">
+            <span class="ks-service-item__title">Accessibility Auditing</span>
+            <span class="ks-service-item__desc">WCAG 2.1 AA audits, remediation strategy, and standards enforcement. Not optional.</span>
+            <span class="ks-service-item__tag">A11y</span>
+          </div>
+          <div class="ks-service-item">
+            <span class="ks-service-item__title">AI Product Integration</span>
+            <span class="ks-service-item__desc">Applied intelligence where it actually helps — not sprinkled in for the pitch deck.</span>
+            <span class="ks-service-item__tag">AI</span>
+          </div>
+          <div class="ks-service-item">
+            <span class="ks-service-item__title">Brand Identity</span>
+            <span class="ks-service-item__desc">Logo, visual language, motion, print. Built to hold together across every surface.</span>
+            <span class="ks-service-item__tag">Brand</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · Collab -->
+    <section id="collab" class="ks-collab" data-animate="reveal">
+      <div class="ks-collab__glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="ks-collab__inner">
+          <p class="ks-section-label" data-animate="child" data-delay="0">Collab</p>
+          <h2 class="ks-collab__heading" data-animate="child" data-delay="1">Have an idea?<br />Let's see what breaks.</h2>
+          <p class="ks-collab__sub" data-animate="child" data-delay="2">
+            Open to creative partnerships, technical collaborations, and projects
+            that don't fit neatly in a brief. If it's ambitious, even better.
+          </p>
+          <div data-animate="child" data-delay="3">
+            <a href="#connect" class="ks-btn ks-btn--primary">Start a Conversation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · About -->
+    <section id="about" class="ks-about" data-animate="reveal">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5">
+            <p class="ks-about__label" data-animate="child" data-delay="0">About</p>
+            <h2 class="ks-about__heading" data-animate="child" data-delay="1">
+              Clarity is the<br />real innovation.
+            </h2>
+          </div>
+          <div class="col-lg-6 offset-lg-1">
+            <div class="ks-about__body" data-animate="child" data-delay="2">
+              <p>Espejo Studios is a design and engineering studio building products that real people depend on — from healthcare platforms processing millions of claims to AI systems that run on a Raspberry Pi in your hallway.</p>
+              <p>Our work sits where human intuition meets machine logic. We don't believe in design that only looks good in a pitch deck. We believe in design that survives contact with the real world.</p>
+              <p>Deep roots in music tech, NYU-trained, and a conviction that "it works" is the floor, not the ceiling.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 · Writings & Thoughts -->
+    <section id="writings" class="ks-journal" data-animate="reveal">
       <div class="ks-journal__gradient-divider" aria-hidden="true"></div>
       <div class="container">
         <div class="mb-5">
-          <p class="ks-journal__label" data-animate="child" data-delay="0">Journal</p>
+          <p class="ks-journal__label" data-animate="child" data-delay="0">Writings &amp; Thoughts</p>
           <h2 class="ks-journal__heading" data-animate="child" data-delay="1">Thinking out loud.</h2>
         </div>
         <div class="ks-journal__list">
@@ -189,32 +334,45 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         About
-         ═══════════════════════════════════════════════════════════ -->
-    <section id="about" class="ks-about" data-animate="reveal">
+    <!-- 09 · Curations -->
+    <section id="curations" class="ks-curations" data-animate="reveal">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-5">
-            <p class="ks-about__label" data-animate="child" data-delay="0">About</p>
-            <h2 class="ks-about__heading" data-animate="child" data-delay="1">
-              Clarity is the<br />real innovation.
-            </h2>
-          </div>
-          <div class="col-lg-6 offset-lg-1">
-            <div class="ks-about__body" data-animate="child" data-delay="2">
-              <p>Espejo Studios is a design and engineering studio building products that real people depend on — from healthcare platforms processing millions of claims to AI systems that run on a Raspberry Pi in your hallway.</p>
-              <p>Our work sits where human intuition meets machine logic. We don't believe in design that only looks good in a pitch deck. We believe in design that survives contact with the real world.</p>
-              <p>Deep roots in music tech, NYU-trained, and a conviction that "it works" is the floor, not the ceiling.</p>
-            </div>
-          </div>
+        <div class="ks-section-header">
+          <p class="ks-section-label" data-animate="child" data-delay="0">Curations</p>
+          <h2 class="ks-section-heading" data-animate="child" data-delay="1">Things worth your attention.</h2>
+          <p class="ks-section-sub" data-animate="child" data-delay="2">Tools, reads, sounds, and rabbit holes I keep returning to.</p>
+        </div>
+        <div data-animate="child" data-delay="3">
+          <a href="#" class="ks-curation-item">
+            <span class="ks-curation-item__cat">Tool</span>
+            <span class="ks-curation-item__title">Figma Variables & Tokens Studio</span>
+            <span class="ks-curation-item__arrow">&rarr;</span>
+          </a>
+          <a href="#" class="ks-curation-item">
+            <span class="ks-curation-item__cat">Read</span>
+            <span class="ks-curation-item__title">The Design of Everyday Things — Don Norman</span>
+            <span class="ks-curation-item__arrow">&rarr;</span>
+          </a>
+          <a href="#" class="ks-curation-item">
+            <span class="ks-curation-item__cat">Tool</span>
+            <span class="ks-curation-item__title">Frigate NVR — Local AI Object Detection</span>
+            <span class="ks-curation-item__arrow">&rarr;</span>
+          </a>
+          <a href="#" class="ks-curation-item">
+            <span class="ks-curation-item__cat">Sound</span>
+            <span class="ks-curation-item__title">Ólafur Arnalds — re:member</span>
+            <span class="ks-curation-item__arrow">&rarr;</span>
+          </a>
+          <a href="#" class="ks-curation-item">
+            <span class="ks-curation-item__cat">Read</span>
+            <span class="ks-curation-item__title">A Pattern Language — Christopher Alexander</span>
+            <span class="ks-curation-item__arrow">&rarr;</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         Connect — Full-width CTA band
-         ═══════════════════════════════════════════════════════════ -->
+    <!-- 10 · Connect -->
     <section id="connect" class="ks-connect" data-animate="reveal">
       <div class="ks-connect__glow" aria-hidden="true"></div>
       <div class="ks-connect__scan-lines" aria-hidden="true"></div>
@@ -254,11 +412,44 @@
       </div>
     </section>
 
+    <!-- 11 · The Rabbit Hole -->
+    <section id="rabbit-hole" class="ks-rabbit" data-animate="reveal">
+      <div class="ks-rabbit__bg-noise" aria-hidden="true"></div>
+      <div class="container">
+        <p class="ks-rabbit__warning" data-animate="child" data-delay="0">// You've gone too far. Or not far enough.</p>
+        <h2 class="ks-rabbit__heading" data-animate="child" data-delay="1">The Rabbit Hole.</h2>
+        <p class="ks-rabbit__sub" data-animate="child" data-delay="2">
+          No guarantees on what's down here. Interesting things. Weird things.
+          The kind of links you bookmark at 2am and never quite forget.
+        </p>
+        <div class="ks-rabbit__links" data-animate="child" data-delay="3">
+          <a href="#" class="ks-rabbit__link">
+            <span class="ks-rabbit__link-label">The Doors of Perception — Aldous Huxley</span>
+            <span class="ks-rabbit__link-tag">literature</span>
+          </a>
+          <a href="#" class="ks-rabbit__link">
+            <span class="ks-rabbit__link-label">Ma: Japanese concept of negative space</span>
+            <span class="ks-rabbit__link-tag">philosophy</span>
+          </a>
+          <a href="#" class="ks-rabbit__link">
+            <span class="ks-rabbit__link-label">The Ghost in the Shell — original 1995 film</span>
+            <span class="ks-rabbit__link-tag">cinema</span>
+          </a>
+          <a href="#" class="ks-rabbit__link">
+            <span class="ks-rabbit__link-label">Brian Eno's Oblique Strategies</span>
+            <span class="ks-rabbit__link-tag">creative systems</span>
+          </a>
+          <a href="#" class="ks-rabbit__link">
+            <span class="ks-rabbit__link-label">Are We Living in a Simulation?</span>
+            <span class="ks-rabbit__link-tag">cosmology</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       Footer
-       ═══════════════════════════════════════════════════════════ -->
+  <!-- Footer -->
   <footer class="ks-footer">
     <div class="ks-footer__gradient-divider" aria-hidden="true"></div>
     <div class="container">
