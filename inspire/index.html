@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Inspire — Sites, artists, designers, and musicians worth your attention. Espejo Studios." />
+  <title>Inspire — Espejo Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+<body>
+  <header class="ks-nav" data-scrolled="false">
+    <div class="container"><div class="ks-nav__inner">
+      <a href="/" class="ks-nav__logo">Espejo Studios</a>
+      <nav class="ks-nav__links" aria-label="Main navigation">
+        <div class="ks-nav__group" data-nav-group>
+          <button class="ks-nav__group-btn" aria-expanded="false">Work</button>
+          <div class="ks-nav__sub">
+            <a href="/projects">Projects</a><a href="/experiments">Experiments</a>
+            <a href="/clients">Clients</a><a href="/services">Services</a>
+          </div>
+        </div>
+        <div class="ks-nav__group" data-nav-group>
+          <button class="ks-nav__group-btn" aria-expanded="false">Studio</button>
+          <div class="ks-nav__sub"><a href="/about">About</a><a href="/collab">Collab</a></div>
+        </div>
+        <div class="ks-nav__group" data-nav-group>
+          <button class="ks-nav__group-btn" aria-expanded="false">Ideas</button>
+          <div class="ks-nav__sub">
+            <a href="/writings">Writings &amp; Thoughts</a>
+            <a href="/curations">Curations</a>
+            <a href="/inspire" aria-current="page">Inspire</a>
+          </div>
+        </div>
+        <a href="/rabbit-hole" class="ks-nav__link ks-nav__link--ghost">The Rabbit Hole</a>
+        <a href="/connect" class="ks-nav__link ks-nav__link--cta">Connect</a>
+      </nav>
+      <button class="ks-burger" id="ksBurger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div></div>
+  </header>
+  <div class="ks-overlay" id="ksOverlay" aria-hidden="true">
+    <ol class="ks-overlay__list">
+      <li class="ks-overlay__item"><a href="/"            class="ks-overlay__link"><span class="ks-overlay__num">00</span>Vision</a></li>
+      <li class="ks-overlay__item"><a href="/projects"    class="ks-overlay__link"><span class="ks-overlay__num">01</span>Projects</a></li>
+      <li class="ks-overlay__item"><a href="/experiments" class="ks-overlay__link"><span class="ks-overlay__num">02</span>Experiments</a></li>
+      <li class="ks-overlay__item"><a href="/clients"     class="ks-overlay__link"><span class="ks-overlay__num">03</span>Clients</a></li>
+      <li class="ks-overlay__item"><a href="/services"    class="ks-overlay__link"><span class="ks-overlay__num">04</span>Services</a></li>
+      <li class="ks-overlay__item"><a href="/collab"      class="ks-overlay__link"><span class="ks-overlay__num">05</span>Collab</a></li>
+      <li class="ks-overlay__item"><a href="/about"       class="ks-overlay__link"><span class="ks-overlay__num">06</span>About</a></li>
+      <li class="ks-overlay__item"><a href="/writings"    class="ks-overlay__link"><span class="ks-overlay__num">07</span>Writings &amp; Thoughts</a></li>
+      <li class="ks-overlay__item"><a href="/curations"   class="ks-overlay__link"><span class="ks-overlay__num">08</span>Curations</a></li>
+      <li class="ks-overlay__item"><a href="/inspire"     class="ks-overlay__link"><span class="ks-overlay__num">09</span>Inspire</a></li>
+      <li class="ks-overlay__item"><a href="/connect"     class="ks-overlay__link"><span class="ks-overlay__num">10</span>Connect</a></li>
+      <li class="ks-overlay__item"><a href="/rabbit-hole" class="ks-overlay__link ks-overlay__link--special"><span class="ks-overlay__num">11</span>The Rabbit Hole</a></li>
+    </ol>
+    <div class="ks-overlay__panel">
+      <p class="ks-overlay__panel-label">Find me</p>
+      <div class="ks-overlay__social">
+        <a href="https://linkedin.com/in/ivyanespejo" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/EspejoStudios" target="_blank" rel="noopener">GitHub</a>
+        <a href="/ivyan">CV</a>
+      </div>
+      <p class="ks-overlay__tagline">Kyoto 2038.</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="ks-page-hero" data-animate="reveal">
+      <div class="container">
+        <p class="ks-page-hero__eyebrow" data-animate="child" data-delay="0">Ideas · 09</p>
+        <h1 class="ks-page-hero__title" data-animate="child" data-delay="1">Inspire.</h1>
+        <p class="ks-page-hero__sub" data-animate="child" data-delay="2">Sites, artists, designers, and musicians worth your attention. Updated when something genuinely moves me.</p>
+      </div>
+    </section>
+
+    <section class="ks-inspire" data-animate="reveal">
+      <div class="container">
+        <div class="ks-inspire-tabs" role="tablist" data-animate="child" data-delay="0">
+          <button class="ks-inspire-tab is-active" role="tab" data-tab="sites">Sites</button>
+          <button class="ks-inspire-tab" role="tab" data-tab="designers">Artists &amp; Designers</button>
+          <button class="ks-inspire-tab" role="tab" data-tab="musicians">Musicians</button>
+        </div>
+
+        <!-- Sites -->
+        <div class="ks-inspire-panel is-active" id="tab-sites" data-animate="child" data-delay="1">
+          <div class="ks-inspire-grid">
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Design Studio</p>
+              <p class="ks-inspire-card__name">Pentagram</p>
+              <p class="ks-inspire-card__desc">The world's largest independent design consultancy. Every project is a case study in restraint and intention.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Interactive</p>
+              <p class="ks-inspire-card__name">Neal.fun</p>
+              <p class="ks-inspire-card__desc">Proof that the web can still feel magical. Deceptively simple interactions with depth underneath.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Typography</p>
+              <p class="ks-inspire-card__name">Klim Type Foundry</p>
+              <p class="ks-inspire-card__desc">Typefaces with a point of view. The writing on type design is as good as the type itself.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Engineering</p>
+              <p class="ks-inspire-card__name">Stripe</p>
+              <p class="ks-inspire-card__desc">The gold standard for how developer-facing design can be both functional and genuinely beautiful.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Editorial</p>
+              <p class="ks-inspire-card__name">The Pudding</p>
+              <p class="ks-inspire-card__desc">Data journalism as art. Visual essays that change how you think about the things they're about.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Creative Dev</p>
+              <p class="ks-inspire-card__name">Bruno Simon</p>
+              <p class="ks-inspire-card__desc">A portfolio that drives a car through itself. The bar for creative personal sites.</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Artists & Designers -->
+        <div class="ks-inspire-panel" id="tab-designers" data-animate="child" data-delay="1">
+          <div class="ks-inspire-grid">
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Graphic Design</p>
+              <p class="ks-inspire-card__name">Saul Bass</p>
+              <p class="ks-inspire-card__desc">Every title sequence, every poster, every logo — proof that simple is the hardest thing to do.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Industrial Design</p>
+              <p class="ks-inspire-card__name">Dieter Rams</p>
+              <p class="ks-inspire-card__desc">Ten principles for good design. Still the clearest articulation of what this work is for.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Digital Art</p>
+              <p class="ks-inspire-card__name">Refik Anadol</p>
+              <p class="ks-inspire-card__desc">Data as paint. Machine hallucinations as architecture. The future of public art looks like this.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">UX Design</p>
+              <p class="ks-inspire-card__name">Susan Kare</p>
+              <p class="ks-inspire-card__desc">Designed the original Mac icons. Made computers feel human before anyone knew that was the job.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Visual Art</p>
+              <p class="ks-inspire-card__name">Hiroshi Sugimoto</p>
+              <p class="ks-inspire-card__desc">Long exposures of movie screens. Theaters as blurs of light. Time as photographic subject.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Motion Design</p>
+              <p class="ks-inspire-card__name">Buck</p>
+              <p class="ks-inspire-card__desc">The studio that made motion design feel like a craft. Character, texture, and timing as language.</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Musicians -->
+        <div class="ks-inspire-panel" id="tab-musicians" data-animate="child" data-delay="1">
+          <div class="ks-inspire-grid">
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Electronic / Ambient</p>
+              <p class="ks-inspire-card__name">Ólafur Arnalds</p>
+              <p class="ks-inspire-card__desc">Strings, piano, and generative systems. Music that breathes. re:member changed how I work.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Ambient</p>
+              <p class="ks-inspire-card__name">Brian Eno</p>
+              <p class="ks-inspire-card__desc">Invented a genre and a philosophy. Ambient 1 is still the best thing to design to.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Jazz / Fusion</p>
+              <p class="ks-inspire-card__name">Herbie Hancock</p>
+              <p class="ks-inspire-card__desc">Headhunters is a masterclass in rhythm as texture. Inventive across every decade.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Neo-Classical</p>
+              <p class="ks-inspire-card__name">Nils Frahm</p>
+              <p class="ks-inspire-card__desc">Piano and synthesis in perfect tension. All Melody showed that genre is just a starting point.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Electronic</p>
+              <p class="ks-inspire-card__name">Aphex Twin</p>
+              <p class="ks-inspire-card__desc">Richard D. James Album rewired what electronic music could be emotionally. Still unmatched.</p>
+            </a>
+            <a href="#" class="ks-inspire-card">
+              <p class="ks-inspire-card__tag">Hip-Hop / Production</p>
+              <p class="ks-inspire-card__name">J Dilla</p>
+              <p class="ks-inspire-card__desc">Donuts. Enough said. The most human drum machine in history.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ks-footer">
+    <div class="ks-footer__gradient-divider" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col-md-6"><p class="ks-footer__logo">Espejo Studios</p><p class="ks-footer__tagline">Kyoto 2038.</p></div>
+        <div class="col-md-6 text-md-end"><nav class="ks-footer__links"><a href="/ivyan">CV</a><a href="https://github.com/EspejoStudios" target="_blank" rel="noopener">GitHub</a><a href="https://linkedin.com/in/ivyanespejo" target="_blank" rel="noopener">LinkedIn</a></nav></div>
+      </div>
+      <div class="ks-footer__bottom"><p>&copy; 2026 Espejo Studios. Built with intention.</p></div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Inspire tabs
+    document.querySelectorAll('.ks-inspire-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.ks-inspire-tab').forEach(t => t.classList.remove('is-active'));
+        document.querySelectorAll('.ks-inspire-panel').forEach(p => p.classList.remove('is-active'));
+        tab.classList.add('is-active');
+        document.getElementById('tab-' + tab.dataset.tab).classList.add('is-active');
+      });
+    });
+  </script>
+</body>
+</html>

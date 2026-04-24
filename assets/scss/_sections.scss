@@ -1,7 +1,131 @@
 // ============================================================
-// Sections — Experiments · Clients · Services · Collab
-//            Curations · The Rabbit Hole
+// Sections — Page hero · Experiments · Clients · Services
+//            Collab · Curations · Inspire · The Rabbit Hole
 // ============================================================
+
+// ─── Interior page hero ──────────────────────────────────
+.ks-page-hero {
+  padding: calc(var(--space-32) + var(--space-10)) 0 var(--space-16);
+
+  &__eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label-size);
+    color: var(--steel-500);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 7vw, 80px);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: var(--space-6);
+  }
+
+  &__sub {
+    font-size: var(--text-body-lg-size);
+    color: var(--color-text-muted);
+    max-width: 560px;
+    line-height: var(--text-body-lg-lh);
+  }
+}
+
+// ─── Inspire ─────────────────────────────────────────────
+.ks-inspire {
+  padding: var(--space-16) 0 var(--space-24);
+}
+
+.ks-inspire-tabs {
+  display: flex;
+  gap: var(--space-1);
+  border-bottom: 1px solid var(--color-border-subtle);
+  margin-bottom: var(--space-10);
+  overflow-x: auto;
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+.ks-inspire-tab {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm-size);
+  color: var(--steel-400);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  white-space: nowrap;
+  margin-bottom: -1px;
+  transition: color 180ms ease, border-color 180ms ease;
+
+  &:hover { color: var(--steel-200); }
+
+  &.is-active {
+    color: var(--steel-50);
+    border-bottom-color: var(--sora);
+  }
+}
+
+.ks-inspire-panel {
+  display: none;
+  &.is-active { display: block; }
+}
+
+.ks-inspire-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+
+  @media (min-width: 576px) { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 992px) { grid-template-columns: repeat(3, 1fr); }
+}
+
+.ks-inspire-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-decoration: none;
+  display: block;
+  transition:
+    border-color var(--duration-fast) ease,
+    background var(--duration-fast) ease;
+
+  &:hover {
+    border-color: rgba(0, 212, 255, 0.22);
+    background: var(--color-surface-raised);
+  }
+
+  &__tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--steel-500);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-3);
+  }
+
+  &__name {
+    font-family: var(--font-display);
+    font-size: var(--text-body-lg-size);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+    transition: color 180ms ease;
+
+    .ks-inspire-card:hover & { color: var(--sora); }
+  }
+
+  &__desc {
+    font-size: var(--text-body-sm-size);
+    color: var(--color-text-muted);
+    line-height: var(--text-body-lh);
+  }
+}
 
 // ─── Shared section shell ────────────────────────────────
 .ks-section {

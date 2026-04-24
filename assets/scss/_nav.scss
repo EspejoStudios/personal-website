@@ -1,15 +1,14 @@
 // ============================================================
-// Navigation — Logo strip + floating burger + full-screen overlay
+// Navigation — Logo + desktop grouped nav + mobile burger
 // ============================================================
 
-// ─── Logo strip (top-left, fixed) ────────────────────────
 .ks-nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  padding: var(--space-5) 0;
+  padding: var(--space-4) 0;
   transition:
     background var(--duration-slow) var(--ease-out-expo),
     border-color var(--duration-slow) var(--ease-out-expo),
@@ -17,11 +16,18 @@
   border-bottom: 1px solid transparent;
 
   &[data-scrolled="true"] {
-    background: rgba(11, 17, 33, 0.85);
+    background: rgba(11, 17, 33, 0.9);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom-color: rgba(58, 74, 107, 0.2);
     padding: var(--space-3) 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
   }
 
   &__logo {
@@ -31,35 +37,163 @@
     color: var(--steel-50) !important;
     text-decoration: none;
     letter-spacing: -0.01em;
-
+    flex-shrink: 0;
     &:hover { color: var(--steel-50) !important; }
+  }
+
+  // ─── Desktop nav — hidden below 992px ───────────────────
+  &__links {
+    display: none;
+    align-items: center;
+    gap: var(--space-1);
+
+    @media (min-width: 992px) { display: flex; }
+  }
+
+  // ─── Dropdown group ──────────────────────────────────────
+  &__group {
+    position: relative;
+
+    &-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: var(--text-body-sm-size);
+      font-weight: 400;
+      color: var(--steel-300);
+      padding: var(--space-2) var(--space-3);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: var(--radius-sm);
+      transition: color var(--duration-fast) var(--ease-out-expo);
+      white-space: nowrap;
+
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border-right: 1px solid currentColor;
+        border-bottom: 1px solid currentColor;
+        transform: rotate(45deg) translateY(-1px);
+        transition: transform 200ms var(--ease-out-expo);
+        flex-shrink: 0;
+      }
+
+      &:hover { color: var(--steel-50); }
+    }
+
+    &.is-open &-btn {
+      color: var(--steel-50);
+
+      &::after { transform: rotate(-135deg) translateY(1px); }
+    }
+
+    &:hover .ks-nav__sub,
+    &.is-open .ks-nav__sub {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  // ─── Dropdown panel ─────────────────────────────────────
+  &__sub {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 192px;
+    background: rgba(8, 12, 24, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(58, 74, 107, 0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition:
+      opacity 200ms var(--ease-out-expo),
+      visibility 200ms var(--ease-out-expo),
+      transform 200ms var(--ease-out-expo);
+
+    a {
+      display: block;
+      font-family: var(--font-body);
+      font-size: var(--text-body-sm-size);
+      color: var(--steel-300);
+      text-decoration: none;
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-sm);
+      transition:
+        color var(--duration-fast) ease,
+        background var(--duration-fast) ease;
+      white-space: nowrap;
+
+      &:hover {
+        color: var(--steel-50);
+        background: rgba(58, 74, 107, 0.2);
+      }
+
+      &[aria-current="page"] { color: var(--sora); }
+    }
+  }
+
+  // ─── Standalone links ────────────────────────────────────
+  &__link {
+    font-family: var(--font-body);
+    font-size: var(--text-body-sm-size);
+    color: var(--steel-300);
+    text-decoration: none;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    transition: color var(--duration-fast) ease;
+
+    &:hover { color: var(--steel-50); }
+
+    &--ghost {
+      color: var(--steel-400);
+      font-style: italic;
+      opacity: 0.75;
+      &:hover { color: var(--sora); opacity: 1; }
+    }
+
+    &--cta {
+      color: var(--sora) !important;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      border-radius: var(--radius-md);
+      font-weight: 500;
+      margin-left: var(--space-2);
+      padding: var(--space-1) var(--space-4);
+
+      &:hover {
+        color: var(--steel-50) !important;
+        border-color: var(--sora);
+        box-shadow: 0 0 16px rgba(0, 212, 255, 0.2);
+      }
+    }
   }
 }
 
-// ─── Burger — fixed right, ~33vh from top ────────────────
+// ─── Burger — in header top-right, mobile/tablet only ────
 .ks-burger {
-  position: fixed;
-  right: var(--space-6);
-  top: 33vh;
-  z-index: 200;
-  background: rgba(11, 17, 33, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(58, 74, 107, 0.4);
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  padding: 10px 12px;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  transition:
-    border-color var(--duration-fast) var(--ease-out-expo),
-    background var(--duration-fast) var(--ease-out-expo);
+  padding: 9px 11px;
+  background: none;
+  border: 1px solid rgba(58, 74, 107, 0.4);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color var(--duration-fast) var(--ease-out-expo);
 
-  &:hover {
-    border-color: rgba(0, 212, 255, 0.5);
-    background: rgba(11, 17, 33, 0.9);
-  }
+  @media (min-width: 992px) { display: none; }
+
+  &:hover { border-color: rgba(0, 212, 255, 0.5); }
 
   span {
     display: block;
@@ -74,14 +208,13 @@
 
   &.is-open {
     border-color: rgba(0, 212, 255, 0.3);
-
     span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
   }
 }
 
-// ─── Full-screen overlay ─────────────────────────────────
+// ─── Full-screen mobile overlay ──────────────────────────
 .ks-overlay {
   position: fixed;
   inset: 0;
@@ -108,7 +241,6 @@
     visibility: visible;
   }
 
-  // ─── Nav list ───────────────────────────────────────
   &__list {
     list-style: none;
     padding: 0;
@@ -127,8 +259,8 @@
       opacity: 1;
     }
 
-    @for $i from 1 through 11 {
-      &:nth-child(#{$i}) { transition-delay: #{($i - 1) * 35}ms; }
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) { transition-delay: #{($i - 1) * 30}ms; }
     }
   }
 
@@ -137,7 +269,7 @@
     align-items: baseline;
     gap: var(--space-4);
     font-family: var(--font-display);
-    font-size: clamp(18px, 2.8vw, 38px);
+    font-size: clamp(18px, 2.8vw, 36px);
     font-weight: 700;
     color: rgba(200, 208, 224, 0.4);
     text-decoration: none;
@@ -156,7 +288,6 @@
 
     &--special {
       color: rgba(0, 212, 255, 0.45);
-
       &:hover {
         color: var(--sora);
         text-shadow: 0 0 32px rgba(0, 212, 255, 0.28);
@@ -174,7 +305,6 @@
     min-width: 26px;
   }
 
-  // ─── Right panel (desktop only) ─────────────────────
   &__panel {
     display: none;
 
@@ -207,7 +337,6 @@
       color: var(--steel-400);
       text-decoration: none;
       transition: color 180ms ease;
-
       &:hover { color: var(--steel-50); }
     }
   }

@@ -12,49 +12,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // ─── Staggered reveal system ─────────────────────────────
-  const revealSections = document.querySelectorAll('[data-animate="reveal"]');
+  // ─── Desktop dropdown groups ─────────────────────────────
+  const navGroups = document.querySelectorAll('[data-nav-group]');
 
-  revealSections.forEach(section => {
-    // Set CSS custom property for each child's delay
-    section.querySelectorAll('[data-animate="child"]').forEach(child => {
-      child.style.setProperty('--reveal-delay', child.dataset.delay || 0);
-    });
-
-    // Hero reveals immediately
-    if (section.classList.contains('ks-hero')) {
-      requestAnimationFrame(() => {
-        section.classList.add('is-revealed');
-      });
-    }
-  });
-
-  // Observe non-hero sections
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (!prefersReducedMotion) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-revealed');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    revealSections.forEach(section => {
-      if (!section.classList.contains('ks-hero')) {
-        observer.observe(section);
-      }
-    });
-  } else {
-    // If reduced motion, reveal everything immediately
-    revealSections.forEach(section => {
-      section.classList.add('is-revealed');
+  function closeAllGroups() {
+    navGroups.forEach(g => {
+      g.classList.remove('is-open');
+      g.querySelector('.ks-nav__group-btn')?.setAttribute('aria-expanded', 'false');
     });
   }
 
-  // ─── Burger / overlay ────────────────────────────────────
+  navGroups.forEach(group => {
+    const btn = group.querySelector('.ks-nav__group-btn');
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = group.classList.contains('is-open');
+      closeAllGroups();
+      if (!isOpen) {
+        group.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  document.addEventListener('click', closeAllGroups);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllGroups();
+  });
+
+  // ─── Mobile burger / overlay ─────────────────────────────
   const burger  = document.getElementById('ksBurger');
   const overlay = document.getElementById('ksOverlay');
 
@@ -86,6 +72,40 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.querySelectorAll('.ks-overlay__link').forEach(link => {
       link.addEventListener('click', () => closeMenu());
     });
+  }
+
+  // ─── Staggered reveal system ─────────────────────────────
+  const revealSections = document.querySelectorAll('[data-animate="reveal"]');
+
+  revealSections.forEach(section => {
+    section.querySelectorAll('[data-animate="child"]').forEach(child => {
+      child.style.setProperty('--reveal-delay', child.dataset.delay || 0);
+    });
+
+    if (section.classList.contains('ks-hero') || section.classList.contains('ks-page-hero')) {
+      requestAnimationFrame(() => section.classList.add('is-revealed'));
+    }
+  });
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealSections.forEach(section => {
+      if (!section.classList.contains('ks-hero') && !section.classList.contains('ks-page-hero')) {
+        observer.observe(section);
+      }
+    });
+  } else {
+    revealSections.forEach(s => s.classList.add('is-revealed'));
   }
 
   // ─── Smooth scroll for anchor links ──────────────────────
