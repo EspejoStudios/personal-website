@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connect — Espejo Studios</title>
+  <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+<body>
+
+<header class="ks-nav" data-scrolled="false"><div class="container"><div class="ks-nav__inner">
+  <a href="/" class="ks-nav__logo">Espejo Studios</a>
+  <nav class="ks-nav__links" aria-label="Main navigation">
+    <div class="ks-nav__group" data-nav-group><button class="ks-nav__group-btn" aria-expanded="false">Work</button><div class="ks-nav__sub"><a href="/projects">Projects</a><a href="/experiments">Experiments</a><a href="/clients">Clients</a><a href="/services">Services</a></div></div>
+    <div class="ks-nav__group" data-nav-group><button class="ks-nav__group-btn" aria-expanded="false">Studio</button><div class="ks-nav__sub"><a href="/about">About</a><a href="/collab">Collab</a></div></div>
+    <div class="ks-nav__group" data-nav-group><button class="ks-nav__group-btn" aria-expanded="false">Ideas</button><div class="ks-nav__sub"><a href="/writings">Writings &amp; Thoughts</a><a href="/curations">Curations</a><a href="/inspire">Inspire</a></div></div>
+    <a href="/rabbit-hole" class="ks-nav__link ks-nav__link--ghost">The Rabbit Hole</a>
+    <a href="/connect" class="ks-nav__link ks-nav__link--cta" aria-current="page">Connect</a>
+  </nav>
+  <button class="ks-burger" id="ksBurger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></div></header>
+<div class="ks-overlay" id="ksOverlay" aria-hidden="true"><ol class="ks-overlay__list"><li class="ks-overlay__item"><a href="/" class="ks-overlay__link"><span class="ks-overlay__num">00</span>Vision</a></li><li class="ks-overlay__item"><a href="/projects" class="ks-overlay__link"><span class="ks-overlay__num">01</span>Projects</a></li><li class="ks-overlay__item"><a href="/experiments" class="ks-overlay__link"><span class="ks-overlay__num">02</span>Experiments</a></li><li class="ks-overlay__item"><a href="/clients" class="ks-overlay__link"><span class="ks-overlay__num">03</span>Clients</a></li><li class="ks-overlay__item"><a href="/services" class="ks-overlay__link"><span class="ks-overlay__num">04</span>Services</a></li><li class="ks-overlay__item"><a href="/collab" class="ks-overlay__link"><span class="ks-overlay__num">05</span>Collab</a></li><li class="ks-overlay__item"><a href="/about" class="ks-overlay__link"><span class="ks-overlay__num">06</span>About</a></li><li class="ks-overlay__item"><a href="/writings" class="ks-overlay__link"><span class="ks-overlay__num">07</span>Writings &amp; Thoughts</a></li><li class="ks-overlay__item"><a href="/curations" class="ks-overlay__link"><span class="ks-overlay__num">08</span>Curations</a></li><li class="ks-overlay__item"><a href="/inspire" class="ks-overlay__link"><span class="ks-overlay__num">09</span>Inspire</a></li><li class="ks-overlay__item"><a href="/connect" class="ks-overlay__link"><span class="ks-overlay__num">10</span>Connect</a></li><li class="ks-overlay__item"><a href="/rabbit-hole" class="ks-overlay__link ks-overlay__link--special"><span class="ks-overlay__num">11</span>The Rabbit Hole</a></li></ol><div class="ks-overlay__panel"><p class="ks-overlay__panel-label">Find me</p><div class="ks-overlay__social"><a href="https://linkedin.com/in/ivyanespejo" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/EspejoStudios" target="_blank" rel="noopener">GitHub</a><a href="/ivyan">CV</a></div><p class="ks-overlay__tagline">Kyoto 2038.</p></div></div>
+
+<main>
+
+  <section class="ks-page-hero" data-animate="reveal">
+    <div class="container">
+      <p class="ks-page-hero__eyebrow" data-animate="child" data-delay="0">10</p>
+      <h1 class="ks-page-hero__title" data-animate="child" data-delay="1">Connect.</h1>
+      <p class="ks-page-hero__sub" data-animate="child" data-delay="2">Don't be a stranger.</p>
+    </div>
+  </section>
+
+  <section class="ks-connect" data-animate="reveal">
+    <div class="ks-connect__glow" aria-hidden="true"></div>
+    <div class="ks-connect__scan-lines" aria-hidden="true"></div>
+    <div class="ks-connect__inner">
+      <div class="container">
+        <div class="ks-connect__content">
+          <p class="ks-connect__label" data-animate="child" data-delay="0">Enter the mirror</p>
+          <h2 class="ks-connect__heading" data-animate="child" data-delay="1">Something is being built here.</h2>
+          <p class="ks-connect__subtitle" data-animate="child" data-delay="2">Design. Music. AI. Engineering. Philosophy. Love. If any of that resonates — step through.</p>
+          <form class="ks-connect__form" data-animate="child" data-delay="3" action="#" method="POST" novalidate>
+            <div class="ks-connect__form-row">
+              <div class="ks-connect__field">
+                <label class="ks-connect__field-label" for="connect-name">Name</label>
+                <input class="ks-connect__input" type="text" id="connect-name" name="name" autocomplete="name" required placeholder="Your name" />
+              </div>
+              <div class="ks-connect__field">
+                <label class="ks-connect__field-label" for="connect-email">Email</label>
+                <input class="ks-connect__input" type="email" id="connect-email" name="email" autocomplete="email" required placeholder="your@email.com" />
+              </div>
+            </div>
+            <div class="ks-connect__field">
+              <label class="ks-connect__field-label" for="connect-message">Message</label>
+              <textarea class="ks-connect__textarea" id="connect-message" name="message" required placeholder="What are you building?" rows="6"></textarea>
+            </div>
+            <button class="ks-connect__submit" type="submit">
+              Step Through <span class="ks-connect__submit-arrow" aria-hidden="true">→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ks-footer"><div class="ks-footer__gradient-divider" aria-hidden="true"></div><div class="container"><div class="row align-items-start"><div class="col-md-6"><p class="ks-footer__logo">Espejo Studios</p><p class="ks-footer__tagline">Kyoto 2038.</p></div><div class="col-md-6 text-md-end"><nav class="ks-footer__links"><a href="/ivyan">CV</a><a href="https://github.com/EspejoStudios" target="_blank" rel="noopener">GitHub</a><a href="https://linkedin.com/in/ivyanespejo" target="_blank" rel="noopener">LinkedIn</a></nav></div></div><div class="ks-footer__bottom"><p>&copy; 2026 Espejo Studios. Built with intention.</p></div></div></footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
